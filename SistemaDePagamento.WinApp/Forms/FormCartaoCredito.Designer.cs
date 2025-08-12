@@ -33,16 +33,19 @@
             label3 = new Label();
             label4 = new Label();
             button1 = new Button();
-            maskedTextBox1 = new MaskedTextBox();
-            textBox1 = new TextBox();
-            maskedTextBox2 = new MaskedTextBox();
-            maskedTextBox3 = new MaskedTextBox();
+            txtNumeroCartao = new MaskedTextBox();
+            txtNomeTitular = new TextBox();
+            txtDataValidade = new MaskedTextBox();
+            txtCvv = new MaskedTextBox();
+            valorCompra = new NumericUpDown();
+            valor_label = new Label();
+            ((System.ComponentModel.ISupportInitialize)valorCompra).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(54, 59);
+            label1.Location = new Point(150, 50);
             label1.Name = "label1";
             label1.Size = new Size(109, 15);
             label1.TabIndex = 0;
@@ -51,7 +54,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(67, 92);
+            label2.Location = new Point(163, 83);
             label2.Name = "label2";
             label2.Size = new Size(96, 15);
             label2.TabIndex = 1;
@@ -60,7 +63,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(109, 132);
+            label3.Location = new Point(205, 123);
             label3.Name = "label3";
             label3.Size = new Size(54, 15);
             label3.TabIndex = 2;
@@ -69,7 +72,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(131, 171);
+            label4.Location = new Point(227, 162);
             label4.Name = "label4";
             label4.Size = new Size(32, 15);
             label4.TabIndex = 3;
@@ -77,53 +80,73 @@
             // 
             // button1
             // 
-            button1.Location = new Point(131, 249);
+            button1.Location = new Point(227, 263);
             button1.Name = "button1";
             button1.Size = new Size(87, 33);
             button1.TabIndex = 4;
             button1.Text = "Confirmar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // maskedTextBox1
+            // txtNumeroCartao
             // 
-            maskedTextBox1.Location = new Point(169, 56);
-            maskedTextBox1.Mask = "0000 0000 0000 0000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(100, 23);
-            maskedTextBox1.TabIndex = 5;
+            txtNumeroCartao.Location = new Point(265, 47);
+            txtNumeroCartao.Mask = "0000 0000 0000 0000";
+            txtNumeroCartao.Name = "txtNumeroCartao";
+            txtNumeroCartao.Size = new Size(100, 23);
+            txtNumeroCartao.TabIndex = 5;
             // 
-            // textBox1
+            // txtNomeTitular
             // 
-            textBox1.Location = new Point(169, 89);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 6;
+            txtNomeTitular.Location = new Point(265, 80);
+            txtNomeTitular.Name = "txtNomeTitular";
+            txtNomeTitular.Size = new Size(100, 23);
+            txtNomeTitular.TabIndex = 6;
             // 
-            // maskedTextBox2
+            // txtDataValidade
             // 
-            maskedTextBox2.Location = new Point(169, 129);
-            maskedTextBox2.Mask = "00/00";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(100, 23);
-            maskedTextBox2.TabIndex = 7;
+            txtDataValidade.Location = new Point(265, 120);
+            txtDataValidade.Mask = "00/00";
+            txtDataValidade.Name = "txtDataValidade";
+            txtDataValidade.Size = new Size(100, 23);
+            txtDataValidade.TabIndex = 7;
             // 
-            // maskedTextBox3
+            // txtCvv
             // 
-            maskedTextBox3.Location = new Point(169, 168);
-            maskedTextBox3.Mask = "000";
-            maskedTextBox3.Name = "maskedTextBox3";
-            maskedTextBox3.Size = new Size(100, 23);
-            maskedTextBox3.TabIndex = 8;
+            txtCvv.Location = new Point(265, 159);
+            txtCvv.Mask = "000";
+            txtCvv.Name = "txtCvv";
+            txtCvv.Size = new Size(100, 23);
+            txtCvv.TabIndex = 8;
+            // 
+            // valorCompra
+            // 
+            valorCompra.DecimalPlaces = 2;
+            valorCompra.Location = new Point(265, 198);
+            valorCompra.Name = "valorCompra";
+            valorCompra.Size = new Size(100, 23);
+            valorCompra.TabIndex = 10;
+            // 
+            // valor_label
+            // 
+            valor_label.AutoSize = true;
+            valor_label.Location = new Point(223, 200);
+            valor_label.Name = "valor_label";
+            valor_label.Size = new Size(36, 15);
+            valor_label.TabIndex = 9;
+            valor_label.Text = "Valor:";
             // 
             // FormCartaoCredito
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(335, 379);
-            Controls.Add(maskedTextBox3);
-            Controls.Add(maskedTextBox2);
-            Controls.Add(textBox1);
-            Controls.Add(maskedTextBox1);
+            ClientSize = new Size(524, 335);
+            Controls.Add(valorCompra);
+            Controls.Add(valor_label);
+            Controls.Add(txtCvv);
+            Controls.Add(txtDataValidade);
+            Controls.Add(txtNomeTitular);
+            Controls.Add(txtNumeroCartao);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -132,6 +155,7 @@
             Name = "FormCartaoCredito";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cartão de Crédito";
+            ((System.ComponentModel.ISupportInitialize)valorCompra).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,9 +167,11 @@
         private Label label3;
         private Label label4;
         private Button button1;
-        private MaskedTextBox maskedTextBox1;
-        private TextBox textBox1;
-        private MaskedTextBox maskedTextBox2;
-        private MaskedTextBox maskedTextBox3;
+        private MaskedTextBox txtNumeroCartao;
+        private TextBox txtNomeTitular;
+        private MaskedTextBox txtDataValidade;
+        private MaskedTextBox txtCvv;
+        private NumericUpDown valorCompra;
+        private Label valor_label;
     }
 }

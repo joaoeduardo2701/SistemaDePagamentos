@@ -30,15 +30,12 @@
         {
             components = new System.ComponentModel.Container();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            valor_label = new Label();
             label1 = new Label();
             EfetuarPagamento = new Button();
             label2 = new Label();
-            numericUpDown1 = new NumericUpDown();
             rdbCredito = new RadioButton();
             rdbBoleto = new RadioButton();
             rdbPix = new RadioButton();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -46,19 +43,10 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // valor_label
-            // 
-            valor_label.AutoSize = true;
-            valor_label.Location = new Point(310, 141);
-            valor_label.Name = "valor_label";
-            valor_label.Size = new Size(36, 15);
-            valor_label.TabIndex = 1;
-            valor_label.Text = "Valor:";
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(222, 180);
+            label1.Location = new Point(356, 143);
             label1.Name = "label1";
             label1.Size = new Size(124, 15);
             label1.TabIndex = 5;
@@ -66,7 +54,7 @@
             // 
             // EfetuarPagamento
             // 
-            EfetuarPagamento.Location = new Point(349, 326);
+            EfetuarPagamento.Location = new Point(346, 329);
             EfetuarPagamento.Name = "EfetuarPagamento";
             EfetuarPagamento.Size = new Size(124, 33);
             EfetuarPagamento.TabIndex = 6;
@@ -84,19 +72,11 @@
             label2.TabIndex = 7;
             label2.Text = "Sistema de Pagamentos";
             // 
-            // numericUpDown1
-            // 
-            numericUpDown1.DecimalPlaces = 2;
-            numericUpDown1.Location = new Point(353, 139);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 8;
-            // 
             // rdbCredito
             // 
             rdbCredito.AutoSize = true;
             rdbCredito.Checked = true;
-            rdbCredito.Location = new Point(357, 181);
+            rdbCredito.Location = new Point(362, 186);
             rdbCredito.Name = "rdbCredito";
             rdbCredito.Size = new Size(118, 19);
             rdbCredito.TabIndex = 10;
@@ -107,7 +87,7 @@
             // rdbBoleto
             // 
             rdbBoleto.AutoSize = true;
-            rdbBoleto.Location = new Point(357, 216);
+            rdbBoleto.Location = new Point(362, 221);
             rdbBoleto.Name = "rdbBoleto";
             rdbBoleto.Size = new Size(108, 19);
             rdbBoleto.TabIndex = 11;
@@ -118,7 +98,7 @@
             // rdbPix
             // 
             rdbPix.AutoSize = true;
-            rdbPix.Location = new Point(357, 252);
+            rdbPix.Location = new Point(362, 257);
             rdbPix.Name = "rdbPix";
             rdbPix.Size = new Size(41, 19);
             rdbPix.TabIndex = 12;
@@ -134,26 +114,21 @@
             Controls.Add(rdbPix);
             Controls.Add(rdbBoleto);
             Controls.Add(rdbCredito);
-            Controls.Add(numericUpDown1);
             Controls.Add(label2);
             Controls.Add(EfetuarPagamento);
             Controls.Add(label1);
-            Controls.Add(valor_label);
             Name = "TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Pagamentos";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private ContextMenuStrip contextMenuStrip1;
-        private Label valor_label;
         private Label label1;
         private Button EfetuarPagamento;
         private Label label2;
-        private NumericUpDown numericUpDown1;
         private RadioButton rdbCredito;
         private RadioButton rdbBoleto;
         private RadioButton rdbPix;
