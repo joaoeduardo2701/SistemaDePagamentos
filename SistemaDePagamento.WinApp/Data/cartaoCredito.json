@@ -1,7 +1,18 @@
-{
-  "NumeroCartao": "1234 5678 9012 3456",
-  "NomeTitular": "João da Silva",
-  "DataValidade": "12/25",
-  "Cvv": "123",
-  "ValorCompra": 150.75
-}
+[
+  {
+    "Id": 1,
+    "NumeroCartao": "1234 1234 1234 1234",
+    "NomeTitular": "José Testes",
+    "DataValidade": "12/25",
+    "Cvv": "123",
+    "Limite": 500.0
+  },
+  {
+    "Id": 2,
+    "NumeroCartao": "1234 1234 1234 1234",
+    "NomeTitular": "Maria Testes",
+    "DataValidade": "12/25",
+    "Cvv": "123",
+    "Limite": 287.35
+  }
+]

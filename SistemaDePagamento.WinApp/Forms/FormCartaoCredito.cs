@@ -1,4 +1,5 @@
-﻿using SistemaDePagamento.WinApp.Models;
+﻿using Newtonsoft.Json;
+using SistemaDePagamento.WinApp.Models;
 
 namespace SistemaDePagamento.WinApp
 {
@@ -11,18 +12,57 @@ namespace SistemaDePagamento.WinApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            string numCartaoInput = txtNumeroCartao.Text.Replace(" ", ""); 
+            string nomeInput = txtNomeTitular.Text.Trim();
+            string dataValInput = txtDataValidade.Text.Trim();
+            string cvvInput = txtCvv.Text.Trim();
+            double valorInput = double.Parse(valorCompra.Text);
+
+            var caminhoArquivo = @"C:\Users\Dudu\source\repos\SistemaDePagamento.WinApp\SistemaDePagamento.WinApp\Data\cartaoCredito.json";
+            var cartaoCreditoJson = File.ReadAllText(caminhoArquivo);
+
+            List<CartaoCredito> cartoes = JsonConvert.DeserializeObject<List<CartaoCredito>>(cartaoCreditoJson)!;
+
+            var encontrado = false;
+
+            foreach (var cartao in cartoes)
             {
-                double preco = double.Parse(valorCompra.Text);
+                string numCartaoJson = cartao.NumeroCartao?.Replace(" ", "") ?? "";
+                string titularJson = cartao.NomeTitular?.Trim() ?? "";
+                string validadeJson = cartao.DataValidade?.Trim() ?? "";
+                string cvvJson = cartao.Cvv?.Trim() ?? "";
 
-                CartaoCredito cartaoCredito = new CartaoCredito(txtNumeroCartao.Text,txtNomeTitular.Text,txtDataValidade.Text, txtCvv.Text, preco);
+                if (numCartaoJson == numCartaoInput && titularJson == nomeInput && validadeJson == dataValInput && cvvJson == cvvInput)
+                {
+                    encontrado = true;
 
-                cartaoCredito.RealizarPagamento(preco);                 
+                    if (cartao.Limite < cartao.ValorCompra)
+                    {
+                        MessageBox.Show("Limite da conta insuficiente!");
+                        break;  
+                    }
+
+                    cartao.ValorCompra = valorInput;
+
+                    cartao.RealizarPagamento(double.Parse(valorCompra.Text));
+
+                    string jsonAlterado = JsonConvert.SerializeObject(cartoes, Formatting.Indented);
+
+                    break;
+                }
             }
-            catch
+
+            if (encontrado)
             {
-                
-                MessageBox.Show("Erro ao realizar o pagamento. Verifique os dados informados.", "Erro", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                string jsonAlterado = JsonConvert.SerializeObject(cartoes, Formatting.Indented);
+                File.WriteAllText(caminhoArquivo, jsonAlterado);
+
+                MessageBox.Show("Pagamento autorizado!");
+               
+            }
+            else
+            {
+                MessageBox.Show("Dados não encontrados ou não batem!");
             }
         }
     }

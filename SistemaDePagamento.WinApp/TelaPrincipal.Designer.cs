@@ -46,7 +46,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(356, 143);
+            label1.Location = new Point(321, 142);
             label1.Name = "label1";
             label1.Size = new Size(124, 15);
             label1.TabIndex = 5;
@@ -54,7 +54,7 @@
             // 
             // EfetuarPagamento
             // 
-            EfetuarPagamento.Location = new Point(346, 329);
+            EfetuarPagamento.Location = new Point(321, 339);
             EfetuarPagamento.Name = "EfetuarPagamento";
             EfetuarPagamento.Size = new Size(124, 33);
             EfetuarPagamento.TabIndex = 6;
@@ -66,7 +66,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
-            label2.Location = new Point(222, 41);
+            label2.Location = new Point(213, 33);
             label2.Name = "label2";
             label2.Size = new Size(351, 41);
             label2.TabIndex = 7;
@@ -76,7 +76,7 @@
             // 
             rdbCredito.AutoSize = true;
             rdbCredito.Checked = true;
-            rdbCredito.Location = new Point(362, 186);
+            rdbCredito.Location = new Point(327, 185);
             rdbCredito.Name = "rdbCredito";
             rdbCredito.Size = new Size(118, 19);
             rdbCredito.TabIndex = 10;
@@ -87,7 +87,7 @@
             // rdbBoleto
             // 
             rdbBoleto.AutoSize = true;
-            rdbBoleto.Location = new Point(362, 221);
+            rdbBoleto.Location = new Point(327, 220);
             rdbBoleto.Name = "rdbBoleto";
             rdbBoleto.Size = new Size(108, 19);
             rdbBoleto.TabIndex = 11;
@@ -98,7 +98,7 @@
             // rdbPix
             // 
             rdbPix.AutoSize = true;
-            rdbPix.Location = new Point(362, 257);
+            rdbPix.Location = new Point(327, 256);
             rdbPix.Name = "rdbPix";
             rdbPix.Size = new Size(41, 19);
             rdbPix.TabIndex = 12;
