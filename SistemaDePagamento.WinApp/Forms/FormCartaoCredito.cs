@@ -46,21 +46,17 @@ namespace SistemaDePagamento.WinApp
 
                     cartao.RealizarPagamento(double.Parse(valorCompra.Text));
 
+                    MessageBox.Show("Pagamento autorizado!");
+
                     string jsonAlterado = JsonConvert.SerializeObject(cartoes, Formatting.Indented);
+                    File.WriteAllText(caminhoArquivo, jsonAlterado);
 
                     break;
                 }
             }
 
-            if (encontrado)
-            {
-                string jsonAlterado = JsonConvert.SerializeObject(cartoes, Formatting.Indented);
-                File.WriteAllText(caminhoArquivo, jsonAlterado);
 
-                MessageBox.Show("Pagamento autorizado!");
-               
-            }
-            else
+            if (!encontrado)
             {
                 MessageBox.Show("Dados não encontrados ou não batem!");
             }

@@ -2,7 +2,7 @@
 
 namespace SistemaDePagamento.WinApp.Models
 {
-    public class CartaoCredito : PagamentoBase
+    public class CartaoCredito : PagamentoBase, IPagamento
     {
         [JsonProperty(Order = 2)]
         public string NumeroCartao { get; set; }
@@ -31,6 +31,18 @@ namespace SistemaDePagamento.WinApp.Models
 
         public void RealizarPagamento(double valor)
         {
+            if (valor <= 0)
+            {
+                MessageBox.Show("O valor deve ser maior que zero!");
+                return;
+            }
+
+            if (Limite < valor)
+            {
+                MessageBox.Show("Limite insuficiente!");
+                return;
+            }
+
             Limite -= valor;
         }
     }
