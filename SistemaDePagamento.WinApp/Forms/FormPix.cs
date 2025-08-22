@@ -26,16 +26,20 @@ namespace SistemaDePagamento.WinApp.Forms
             {
                 if (chavePix.ChavePix == chave)
                 {
-                    chavePix.RealizarPagamento(valorInput);
+                    encontrado = true;
+
+                    if (!chavePix.RealizarPagamento(valorInput))
+                    {
+                        break;
+                    }
+                  
                     MessageBox.Show("Pagamento Efetuado com sucesso");
 
                     string jsonAlterado = JsonConvert.SerializeObject(chavesPix, Formatting.Indented);
 
                     File.WriteAllText(caminhoArquivo, jsonAlterado);
 
-                    encontrado = true;
                 }
-
             }
 
             if (!encontrado)

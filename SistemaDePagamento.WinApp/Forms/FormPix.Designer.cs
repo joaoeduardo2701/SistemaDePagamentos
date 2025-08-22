@@ -90,6 +90,7 @@
             Controls.Add(valorCompra);
             Controls.Add(valor_label);
             Name = "FormPix";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Pix";
             ((System.ComponentModel.ISupportInitialize)valorCompra).EndInit();
             ResumeLayout(false);

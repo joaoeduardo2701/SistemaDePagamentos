@@ -36,15 +36,12 @@ namespace SistemaDePagamento.WinApp
                 {
                     encontrado = true;
 
-                    if (cartao.Limite < cartao.ValorCompra)
-                    {
-                        MessageBox.Show("Limite da conta insuficiente!");
-                        break;  
-                    }
-
                     cartao.ValorCompra = valorInput;
 
-                    cartao.RealizarPagamento(double.Parse(valorCompra.Text));
+                    if (!cartao.RealizarPagamento(double.Parse(valorCompra.Text)))
+                    {
+                        break;
+                    }
 
                     MessageBox.Show("Pagamento autorizado!");
 

@@ -29,21 +29,23 @@ namespace SistemaDePagamento.WinApp.Models
             ValorCompra = valorCompra;
         }
 
-        public void RealizarPagamento(double valor)
+        public bool RealizarPagamento(double valor)
         {
             if (valor <= 0)
             {
                 MessageBox.Show("O valor deve ser maior que zero!");
-                return;
+                return false;
             }
 
             if (Limite < valor)
             {
                 MessageBox.Show("Limite insuficiente!");
-                return;
+                return false;
             }
 
             Limite -= valor;
+
+            return true;
         }
     }
 }

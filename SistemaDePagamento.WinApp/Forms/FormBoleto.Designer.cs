@@ -28,18 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
+            valorCompra = new NumericUpDown();
+            valor_label = new Label();
+            efetuarPagamento = new Button();
+            textNome = new TextBox();
+            label2 = new Label();
+            txtCPF = new MaskedTextBox();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)valorCompra).BeginInit();
             SuspendLayout();
+            // 
+            // valorCompra
+            // 
+            valorCompra.DecimalPlaces = 2;
+            valorCompra.Location = new Point(220, 146);
+            valorCompra.Name = "valorCompra";
+            valorCompra.Size = new Size(100, 23);
+            valorCompra.TabIndex = 14;
+            // 
+            // valor_label
+            // 
+            valor_label.AutoSize = true;
+            valor_label.Location = new Point(178, 148);
+            valor_label.Name = "valor_label";
+            valor_label.Size = new Size(36, 15);
+            valor_label.TabIndex = 13;
+            valor_label.Text = "Valor:";
+            // 
+            // efetuarPagamento
+            // 
+            efetuarPagamento.Location = new Point(208, 212);
+            efetuarPagamento.Name = "efetuarPagamento";
+            efetuarPagamento.Size = new Size(87, 33);
+            efetuarPagamento.TabIndex = 16;
+            efetuarPagamento.Text = "Confirmar";
+            efetuarPagamento.UseVisualStyleBackColor = true;
+            efetuarPagamento.Click += efetuarPagamento_Click;
+            // 
+            // textNome
+            // 
+            textNome.Location = new Point(220, 68);
+            textNome.Name = "textNome";
+            textNome.Size = new Size(100, 23);
+            textNome.TabIndex = 23;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(171, 71);
+            label2.Name = "label2";
+            label2.Size = new Size(43, 15);
+            label2.TabIndex = 22;
+            label2.Text = "Nome:";
+            // 
+            // txtCPF
+            // 
+            txtCPF.Location = new Point(220, 107);
+            txtCPF.Mask = "000.000.000-00";
+            txtCPF.Name = "txtCPF";
+            txtCPF.Size = new Size(100, 23);
+            txtCPF.TabIndex = 25;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(183, 110);
+            label1.Name = "label1";
+            label1.Size = new Size(31, 15);
+            label1.TabIndex = 24;
+            label1.Text = "CPF:";
             // 
             // FormBoleto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(498, 314);
+            Controls.Add(txtCPF);
+            Controls.Add(label1);
+            Controls.Add(textNome);
+            Controls.Add(label2);
+            Controls.Add(efetuarPagamento);
+            Controls.Add(valorCompra);
+            Controls.Add(valor_label);
             Name = "FormBoleto";
-            Text = "FormBoleto";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Boleto Bancário";
+            ((System.ComponentModel.ISupportInitialize)valorCompra).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private NumericUpDown valorCompra;
+        private Label valor_label;
+        private Button efetuarPagamento;
+        private TextBox textNome;
+        private Label label2;
+        private MaskedTextBox txtCPF;
+        private Label label1;
     }
 }

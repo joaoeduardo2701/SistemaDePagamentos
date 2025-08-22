@@ -2,6 +2,6 @@
 {
     public interface IPagamento
     {
-        void RealizarPagamento(double valor);
+        bool RealizarPagamento(double valor);
     }
 }

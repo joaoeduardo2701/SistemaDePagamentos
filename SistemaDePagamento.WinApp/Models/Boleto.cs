@@ -2,18 +2,16 @@
 
 namespace SistemaDePagamento.WinApp.Models
 {
-    public class Pix : PagamentoBase, IPagamento
+    public class Boleto : PagamentoBase, IPagamento
     {
         [JsonProperty(Order = 2)]
-        public string ChavePix { get; set; }
-        [JsonProperty(Order = 3)]
-        public double Saldo { get; set; }
+        public string Nome { get; set; }
 
-        public Pix(string chavePix, double saldo)
-        {
-            ChavePix = chavePix;
-            Saldo = saldo;
-        }
+        [JsonProperty(Order = 3)]
+        public string CPF { get; set; }
+
+        [JsonProperty(Order = 4)]
+        public double Saldo { get; set; }
 
         public bool RealizarPagamento(double valor)
         {
