@@ -46,11 +46,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(321, 142);
+            label1.Location = new Point(292, 136);
             label1.Name = "label1";
-            label1.Size = new Size(124, 15);
+            label1.Size = new Size(195, 15);
             label1.TabIndex = 5;
-            label1.Text = "Forma de Pagamento:";
+            label1.Text = "Escolha a sua forma de pagamento:";
             // 
             // EfetuarPagamento
             // 
@@ -66,7 +66,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
-            label2.Location = new Point(213, 33);
+            label2.Location = new Point(214, 46);
             label2.Name = "label2";
             label2.Size = new Size(351, 41);
             label2.TabIndex = 7;
